@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body ng-app="PopupServiceExample">
+  <h1>A generic popup service example: </h1> Click on a button to view a popup.
+  <div ng-controller="AppController">
+    <button class="btn btn-success" ng-click="show_alert()">Show Alert</button>
+    <button class="btn btn-warning" ng-click="show_confirm()">Show Confirm</button>
+    <button class="btn btn-danger" ng-click="show_error()">Show Error</button>
+  </div>
+  <!-- dependencies -->
+  <!-- angular core -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+  <!-- angular-animate -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-animate.min.js"></script>
+  <!-- angular-touch -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-touch.min.js"></script>
+  <!-- angular-sanitize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-sanitize.js"></script>
+  <!-- ui-bootstrap core library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+  <script src="app.js"></script>
+  <script src="service.js"></script>
+  <script src="controller.js"></script>
+  <script id="popup.htm" type="text/ng-template">
+    <div class="modal-content">
+      <div class="modal-header" ng-if='$ctrl.data.title != null'>
+        <h3 class="modal-title" id="modal-title">
+            <i ng-if="$ctrl.data.is_error" class="fa fa-warning"></i>
+            <span ng-bind-html="$ctrl.data.title"></span>
+        </h3>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <p ng-bind-html="$ctrl.data.body"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" type="button" class="btn" ng-hide="$ctrl.data.is_alert || $ctrl.data.is_error" ng-click="$ctrl.data.cancel()" ng-bind-html="$ctrl.data.cancel_label"></button>
+        <button ng-class="{ 'btn btn-primary' : ($ctrl.data.is_confirm || $ctrl.data.is_alert) , 'btn btn-warning' : ($ctrl.data.is_error)}" ng-click="$ctrl.data.close();" ng-bind-html="$ctrl.data.close_label"></button>
+      </div>
+    </div>
+  </script>
+</body>
+
+</html>>
