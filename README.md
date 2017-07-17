@@ -68,13 +68,13 @@ Declare constants on the AngularjS application as follows:
   
   Their description is as follows:
   
-  1. title: String. Title for the popup. If no title is to be set, set this property to null. This must be set. `Default: Alert Title`
-  2. body: String. Message body to be displayed. This must be set. `Default: Alert Body`
-  3. close_label: String. The label to be shown on the popup positive close. `Default: OK`
-  4. cancel_label: String. The label to be shown on the popup negative close. `Default: Cancel`
-  5. is_confirm: boolean. Set this to true, if this is an `action confirmation` popup. Setting this to true overrides `is_error` and `is_alert`. `Default: false`
-  6. is_error: boolean. Set this to true, if this is an error popup. This is overriden if `is_confirm` is `true`. Setting this to true overrides `is_alert`. `Default: false`
-  7. is_alert: boolean. Set this to true, if this is a confirmation popup. This is overriden if `is_error` or `is_confirm` is `true`. `Default: false`
+  1. **title**: String. Title for the popup. If no title is to be set, set this property to null. This must be set. `Default: Alert Title`
+  2. **body**: String. Message body to be displayed. This must be set. `Default: Alert Body`
+  3. **close_label**: String. The label to be shown on the popup positive close. `Default: OK`
+  4. **cancel_label**: String. The label to be shown on the popup negative close. `Default: Cancel`
+  5. **is_confirm**: boolean. Set this to true, if this is an `action confirmation` popup. Setting this to true overrides `is_error` and `is_alert`. `Default: false`
+  6. **is_error**: boolean. Set this to true, if this is an error popup. This is overriden if `is_confirm` is `true`. Setting this to true overrides `is_alert`. `Default: false`
+  7. **is_alert**: boolean. Set this to true, if this is a confirmation popup. This is overriden if `is_error` or `is_confirm` is `true`. `Default: false`
 
 Besides these more can be added to this object to pass data to the controller via the `modal_data` attribute. See `source`. Examples below.
 
